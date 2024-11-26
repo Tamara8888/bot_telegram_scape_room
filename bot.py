@@ -3,7 +3,6 @@ from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandl
 import os
 
 # Obtener el token desde las variables de entorno
-TELEGRAM_TOKEN = '7920703839:AAF5-p5gDLlsqiG0R6VaftYOP-Zl2ijtroQ'
 TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 # Diccionario con los textos del escape room
