@@ -1,5 +1,10 @@
 from telegram import Update, InputMediaPhoto, InputMediaAudio
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
+import os
+
+# Obtener el token desde las variables de entorno
+TELEGRAM_TOKEN = '7920703839:AAF5-p5gDLlsqiG0R6VaftYOP-Zl2ijtroQ'
+TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 # Diccionario con los textos del escape room
 TEXTS = {
@@ -105,7 +110,7 @@ async def pista5(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 # Función principal para manejar el bot
 def main() -> None:
     # Crear la aplicación del bot con tu Token
-    application = Application.builder().token('7920703839:AAF5-p5gDLlsqiG0R6VaftYOP-Zl2ijtroQ').build()
+    application = Application.builder().token(TOKEN).build()
 
     # Agregar los manejadores de comandos
     application.add_handler(CommandHandler("start", start))
